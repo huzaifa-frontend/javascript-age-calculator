@@ -1,2 +1,1 @@
-# JavaScript-Age-Calculator
- 
+# SMIT Assignment 08
