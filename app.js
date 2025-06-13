@@ -1,5 +1,4 @@
 function calculateAge() {
-
     let day = prompt("Enter your birth day (1-31):");
     let month = prompt("Enter your birth month (e.g: 'January', 'Jan', or '01'):");
     let year = prompt("Enter your birth year:");
@@ -12,12 +11,10 @@ function calculateAge() {
         ];
         month = month.toLowerCase();
         if (month.length <= 3) {
-            month = months.find(m => m.startsWith(month)); // Convert abbreviation to full name
+            month = months.find(m => m.startsWith(month));
         }
         monthNumber = months.indexOf(month) + 1;
-    } 
-    
-    else {
+    } else {
         monthNumber = parseInt(month);
     }
 
@@ -28,10 +25,9 @@ function calculateAge() {
     let ageMonths = today.getMonth() - birthDate.getMonth();
     let ageDays = today.getDate() - birthDate.getDate();
 
-    // Adjust the age if the birthday hasn't happened yet this year
     if (ageDays < 0) {
         ageMonths--;
-        ageDays += new Date(today.getFullYear(), today.getMonth(), 0).getDate(); // Days in the previous month
+        ageDays += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
     }
     if (ageMonths < 0) {
         ageYears--;
@@ -40,5 +36,3 @@ function calculateAge() {
 
     alert(`Your Age is ${ageYears} years, ${ageMonths} months, and ${ageDays} days!`);
 }
-
-calculateAge();
